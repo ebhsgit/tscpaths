@@ -61,9 +61,10 @@ typings/
 .rpt2_cache
 
 # Compiled source
-cjs
-dist
-lib
+!cjs
+!dist
+!lib
+
 # Optional eslint cache
 .eslintcache
 
