@@ -35,6 +35,8 @@ export const mapPaths = (
 };
 
 export const loadConfig = (file: string): ITSConfig => {
+  const requireJSON5 = require('require-json5');
+
   const {
     extends: ext,
     compilerOptions: { baseUrl, outDir, paths } = {
@@ -42,7 +44,7 @@ export const loadConfig = (file: string): ITSConfig => {
       outDir: undefined,
       paths: undefined,
     },
-  } = require(file) as IRawTSConfig;
+  } = requireJSON5(file) as IRawTSConfig;
 
   const config: ITSConfig = {};
   if (baseUrl) {
