@@ -72,7 +72,7 @@ const configDir = dirname(configFile);
 const basePath = resolve(configDir, baseUrl);
 verboseLog(`basePath: ${basePath}`);
 
-const outPath = outRoot || resolve(basePath, outDir);
+const outPath = outRoot || resolve(configDir, outDir);
 verboseLog(`outPath: ${outPath}`);
 
 const outFileToSrcFile = (x: string): string =>
